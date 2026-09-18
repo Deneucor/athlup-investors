@@ -8,7 +8,7 @@
   <meta name="description" content="ATHLUP transforme la discipline quotidienne en progression mesurable, gamifiée et récompensée.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -85,8 +85,15 @@
     <section class="word-stream" aria-label="Piliers ATHLUP">
       <div class="marquee">
         <div class="marquee-track">
-          <span>MENTAL</span><i>✦</i><span>SOMMEIL</span><i>✦</i><span>NUTRITION</span><i>✦</i><span>RÉCUPÉRATION</span><i>✦</i><span>MOUVEMENT</span><i>✦</i><span>DISCIPLINE</span><i>✦</i>
-          <span>MENTAL</span><i>✦</i><span>SOMMEIL</span><i>✦</i><span>NUTRITION</span><i>✦</i><span>RÉCUPÉRATION</span><i>✦</i><span>MOUVEMENT</span><i>✦</i><span>DISCIPLINE</span><i>✦</i>
+          <div class="marquee-group">
+            <span>MENTAL</span><i>✦</i><span>SOMMEIL</span><i>✦</i><span>NUTRITION</span><i>✦</i><span>RÉCUPÉRATION</span><i>✦</i><span>MOUVEMENT</span><i>✦</i><span>DISCIPLINE</span><i>✦</i>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span>MENTAL</span><i>✦</i><span>SOMMEIL</span><i>✦</i><span>NUTRITION</span><i>✦</i><span>RÉCUPÉRATION</span><i>✦</i><span>MOUVEMENT</span><i>✦</i><span>DISCIPLINE</span><i>✦</i>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span>MENTAL</span><i>✦</i><span>SOMMEIL</span><i>✦</i><span>NUTRITION</span><i>✦</i><span>RÉCUPÉRATION</span><i>✦</i><span>MOUVEMENT</span><i>✦</i><span>DISCIPLINE</span><i>✦</i>
+          </div>
         </div>
       </div>
     </section>
@@ -101,13 +108,109 @@
         </div>
       </div>
 
-      <div class="pillars">
-        <article class="pillar reveal"><em>01</em><span>🧠</span><h3>Mental</h3><p>Focus, visualisation, préparation et maîtrise émotionnelle.</p></article>
-        <article class="pillar reveal delay-1"><em>02</em><span>🌙</span><h3>Sommeil</h3><p>Construire une récupération qui soutient réellement la performance.</p></article>
-        <article class="pillar reveal delay-2"><em>03</em><span>⚡</span><h3>Nutrition</h3><p>Créer des habitudes simples qui accompagnent l'effort.</p></article>
-        <article class="pillar reveal"><em>04</em><span>♻</span><h3>Récupération</h3><p>Mobilité, respiration et protocoles pour mieux repartir.</p></article>
-        <article class="pillar reveal delay-1"><em>05</em><span>🏃</span><h3>Mouvement</h3><p>Valoriser l'activité quotidienne et la régularité.</p></article>
-        <article class="pillar reveal delay-2"><em>06</em><span>🔥</span><h3>Discipline</h3><p>Transformer la constance en progression visible et gratifiante.</p></article>
+      <div class="pillars flip-grid">
+        <article class="pillar flip-card reveal" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <em>01</em>
+              <span class="pillar-icon">🧠</span>
+              <div class="front-bottom">
+                <h3>Mental</h3>
+                <small>SURVOLER POUR DÉCOUVRIR <b>↗</b></small>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="back-top"><em>01</em><span>Mental</span></div>
+              <p>Focus, visualisation, préparation et maîtrise émotionnelle.</p>
+              <div class="back-mark">🧠</div>
+            </div>
+          </div>
+        </article>
+        <article class="pillar flip-card reveal" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <em>02</em>
+              <span class="pillar-icon">🌙</span>
+              <div class="front-bottom">
+                <h3>Sommeil</h3>
+                <small>SURVOLER POUR DÉCOUVRIR <b>↗</b></small>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="back-top"><em>02</em><span>Sommeil</span></div>
+              <p>Construire une récupération qui soutient réellement la performance.</p>
+              <div class="back-mark">🌙</div>
+            </div>
+          </div>
+        </article>
+        <article class="pillar flip-card reveal" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <em>03</em>
+              <span class="pillar-icon">⚡</span>
+              <div class="front-bottom">
+                <h3>Nutrition</h3>
+                <small>SURVOLER POUR DÉCOUVRIR <b>↗</b></small>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="back-top"><em>03</em><span>Nutrition</span></div>
+              <p>Créer des habitudes simples qui accompagnent l'effort.</p>
+              <div class="back-mark">⚡</div>
+            </div>
+          </div>
+        </article>
+        <article class="pillar flip-card reveal" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <em>04</em>
+              <span class="pillar-icon">♻</span>
+              <div class="front-bottom">
+                <h3>Récupération</h3>
+                <small>SURVOLER POUR DÉCOUVRIR <b>↗</b></small>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="back-top"><em>04</em><span>Récupération</span></div>
+              <p>Mobilité, respiration et protocoles pour mieux repartir.</p>
+              <div class="back-mark">♻</div>
+            </div>
+          </div>
+        </article>
+        <article class="pillar flip-card reveal" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <em>05</em>
+              <span class="pillar-icon">🏃</span>
+              <div class="front-bottom">
+                <h3>Mouvement</h3>
+                <small>SURVOLER POUR DÉCOUVRIR <b>↗</b></small>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="back-top"><em>05</em><span>Mouvement</span></div>
+              <p>Valoriser l'activité quotidienne et la régularité.</p>
+              <div class="back-mark">🏃</div>
+            </div>
+          </div>
+        </article>
+        <article class="pillar flip-card reveal" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <em>06</em>
+              <span class="pillar-icon">🔥</span>
+              <div class="front-bottom">
+                <h3>Discipline</h3>
+                <small>SURVOLER POUR DÉCOUVRIR <b>↗</b></small>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="back-top"><em>06</em><span>Discipline</span></div>
+              <p>Transformer la constance en progression visible et gratifiante.</p>
+              <div class="back-mark">🔥</div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -142,9 +245,28 @@
       </div>
     </section>
 
+
+    <section class="believers section" id="believers">
+      <div class="section-kicker reveal">04 — ILS CROIENT EN NOUS</div>
+      <div class="believers-head">
+        <h2 class="reveal">Déjà soutenu par des sportifs<br>du <span>haut niveau.</span></h2>
+        <p class="reveal delay-1">Nous choisissons ici de mettre en avant les environnements sportifs représentés, sans exposer individuellement les investisseurs.</p>
+      </div>
+
+      <div class="club-wall reveal">
+        <div class="club-placeholder"><span>CLUB</span></div>
+        <div class="club-placeholder"><span>CLUB</span></div>
+        <div class="club-placeholder"><span>CLUB</span></div>
+        <div class="club-placeholder"><span>CLUB</span></div>
+        <div class="club-placeholder"><span>CLUB</span></div>
+        <div class="club-placeholder"><span>CLUB</span></div>
+      </div>
+      <p class="club-note reveal">Les identités visuelles des clubs seront ajoutées prochainement.</p>
+    </section>
+
     <section class="invest section" id="invest">
       <div class="invest-bg"></div>
-      <div class="section-kicker reveal">04 — LEVÉE DE FONDS 2026</div>
+      <div class="section-kicker reveal">05 — LEVÉE DE FONDS 2026</div>
       <div class="invest-grid">
         <div class="invest-copy reveal">
           <p class="invest-label">TOUR EN COURS</p>
