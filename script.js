@@ -16,31 +16,38 @@ let fundingStarted = false;
 function startFundingAnimation(){
   if (fundingStarted) return;
   fundingStarted = true;
+
   const fill = document.querySelector('.fund-fill');
   const counter = document.querySelector('.counter');
   const text = document.getElementById('progressText');
-  const target = Number(counter.dataset.target || 60);
+  const amountTarget = Number(counter?.dataset.target || 120000);
+  const progressTarget = Number(fill?.dataset.progress || 60);
+
+  const formatAmount = (value) => Math.round(value).toLocaleString('fr-FR');
 
   if (reduced) {
-    fill.style.width = target + '%';
-    counter.textContent = target;
-    text.textContent = target + '%';
+    if (fill) fill.style.width = progressTarget + '%';
+    if (counter) counter.textContent = formatAmount(amountTarget);
+    if (text) text.textContent = progressTarget + '%';
     return;
   }
 
-  requestAnimationFrame(() => {
-    fill.style.transition = 'width 1.8s cubic-bezier(.2,.8,.2,1)';
-    fill.style.width = target + '%';
-  });
+  if (fill) {
+    requestAnimationFrame(() => {
+      fill.style.transition = 'width 1.8s cubic-bezier(.2,.8,.2,1)';
+      fill.style.width = progressTarget + '%';
+    });
+  }
 
   const duration = 1600;
   const start = performance.now();
   function tick(now){
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3);
-    const value = Math.round(target * eased);
-    counter.textContent = value;
-    text.textContent = value + '%';
+    const amountValue = Math.round(amountTarget * eased);
+    const progressValue = Math.round(progressTarget * eased);
+    if (counter) counter.textContent = formatAmount(amountValue);
+    if (text) text.textContent = progressValue + '%';
     if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
