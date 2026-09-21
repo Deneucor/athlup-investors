@@ -92,3 +92,11 @@ document.querySelectorAll('.flip-card').forEach((card) => {
     }
   });
 });
+
+// V9 — levée ATHLUP : 120 000 € sur 200 000 € = 60 %
+window.addEventListener('DOMContentLoaded', () => {
+  const progressText = document.getElementById('progressText');
+  if (progressText) progressText.textContent = '120 000 € / 200 000 €';
+  const bar = document.getElementById('progressBar') || document.querySelector('.progress-fill');
+  if (bar) bar.style.width = '60%';
+});
