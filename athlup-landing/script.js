@@ -72,3 +72,23 @@ window.addEventListener('scroll', () => {
   const y = Math.min(window.scrollY * .018, 7);
   phone.style.transform = `rotate(${3-y*.22}deg) translateY(${-y}px)`;
 }, {passive:true});
+
+
+// V7 — flip cards: tap/click support for touch devices
+document.querySelectorAll('.flip-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+      document.querySelectorAll('.flip-card.is-flipped').forEach((other) => {
+        if (other !== card) other.classList.remove('is-flipped');
+      });
+      card.classList.toggle('is-flipped');
+    }
+  });
+  card.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ') &&
+        window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
