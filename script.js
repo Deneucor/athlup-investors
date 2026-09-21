@@ -93,10 +93,10 @@ document.querySelectorAll('.flip-card').forEach((card) => {
   });
 });
 
-// V9 — levée ATHLUP : 120 000 € sur 200 000 € = 60 %
-window.addEventListener('DOMContentLoaded', () => {
-  const progressText = document.getElementById('progressText');
-  if (progressText) progressText.textContent = '120 000 € / 200 000 €';
-  const bar = document.getElementById('progressBar') || document.querySelector('.progress-fill');
-  if (bar) bar.style.width = '60%';
+// V13 — garde-fou levée ATHLUP
+window.addEventListener('load', () => {
+  const txt = document.getElementById('progressText');
+  if (txt) txt.textContent = '60%';
+  const fill = document.querySelector('.fund-fill');
+  if (fill) fill.style.width = '60%';
 });
