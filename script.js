@@ -19,7 +19,6 @@ function startFundingAnimation(){
 
   const fill = document.querySelector('.fund-fill');
   const counter = document.querySelector('.counter');
-  const text = document.getElementById('progressText');
   const amountTarget = Number(counter?.dataset.target || 120000);
   const progressTarget = Number(fill?.dataset.progress || 60);
 
@@ -28,7 +27,6 @@ function startFundingAnimation(){
   if (reduced) {
     if (fill) fill.style.width = progressTarget + '%';
     if (counter) counter.textContent = formatAmount(amountTarget);
-    if (text) text.textContent = progressTarget + '%';
     return;
   }
 
@@ -45,9 +43,7 @@ function startFundingAnimation(){
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3);
     const amountValue = Math.round(amountTarget * eased);
-    const progressValue = Math.round(progressTarget * eased);
     if (counter) counter.textContent = formatAmount(amountValue);
-    if (text) text.textContent = progressValue + '%';
     if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
