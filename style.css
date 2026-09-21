@@ -626,3 +626,17 @@ footer{color:#66625e}
   .hero-device{margin-bottom:-55px}
   .club-wall{grid-template-columns:1fr !important}
 }
+
+/* V17 — aide tactile pour les cartes sur mobile */
+.mobile-flip-guide{display:none}
+@media (hover:none), (pointer:coarse), (max-width:768px){
+  .mobile-flip-guide{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    width:max-content;max-width:calc(100% - 32px);margin:22px auto 16px;
+    padding:10px 14px;border:1px solid rgba(255,106,0,.32);border-radius:999px;
+    background:rgba(255,106,0,.07);color:rgba(255,255,255,.78);
+    font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;
+  }
+  .mobile-flip-guide span{color:#ff6a00;font-size:17px;line-height:1;animation:athlupFlipHint 1.8s ease-in-out infinite}
+}
+@keyframes athlupFlipHint{0%,100%{transform:rotate(0deg)}50%{transform:rotate(35deg)}}
