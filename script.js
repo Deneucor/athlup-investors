@@ -103,3 +103,25 @@ window.addEventListener('load', () => {
   const fill = document.querySelector('.fund-fill');
   if (fill) fill.style.width = '60%';
 });
+
+// V18 — Executive Summary PDF modal
+(() => {
+  const modal = document.getElementById('executiveModal');
+  const openers = [document.getElementById('openExecutive'), document.getElementById('openExecutivePreview')].filter(Boolean);
+  if (!modal || !openers.length) return;
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('pdf-open');
+  };
+  const open = () => {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('pdf-open');
+    const btn = modal.querySelector('[data-close-executive]');
+    if (btn) btn.focus();
+  };
+  openers.forEach(el => el.addEventListener('click', open));
+  modal.querySelectorAll('[data-close-executive]').forEach(el => el.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+})();
